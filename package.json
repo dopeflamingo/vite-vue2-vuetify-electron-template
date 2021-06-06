@@ -2,23 +2,63 @@
   "name": "vite-vue2-electron-template",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
+  "homepage": "./",
+  "build": {
+    "extends": null,
+    "appId": "com.electron.electron-with-vite-vue",
+    "directories": {
+      "output": "dist",
+      "buildResources": "public"
+    },
+    "target": "zip",
+    "files": [
+      "*.js",
+      "dist",
+      "node_modules"
+    ]
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve_cli": "vue-cli-service serve",
+    "build_cli": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "electron:start": "electron .",
+    "electron": "electron . --trace-warnings",
+    "start": "nf start -p 3000",
+    "electron-start": "node src/start-vue",
+    "vue-start": "cross-env BROWSER=none vite",
+    "pack": "electron-builder --dir",
+    "bb": "electron-builder ",
+    "dist": "npm run build && electron-builder",
+    "postinstall": "install-app-deps"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "cross-spawn": "^7.0.3",
+    "vue": "^2.6.11",
+    "vuetify": "^2.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^13.1.1",
+    "electron-builder": "^22.10.5",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vite": "^2.3.6",
+    "vite-plugin-components": "^0.10.4",
+    "vite-plugin-vue2": "^1.6.2",
+    "vue-cli-plugin-vuetify": "~2.4.1",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
   },
   "eslintConfig": {
     "root": true,
