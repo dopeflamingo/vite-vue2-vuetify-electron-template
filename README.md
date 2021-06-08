@@ -1,4 +1,4 @@
-# vite-vue2-electron-template
+# vite-vue2-vuetify-electron-template
 
 ## Project setup
 ```
