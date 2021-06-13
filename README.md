@@ -1,3 +1,5 @@
+# (Deprecated)
+
 # vite-vue2-vuetify-electron-template
 
 ## Project setup
